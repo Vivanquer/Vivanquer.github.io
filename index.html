@@ -1,1 +1,36 @@
-<h1>My Portfolio</h1>
+<!-- Add these buttons somewhere in your HTML -->
+<button onclick="setLanguage('en')">English</button>
+<button onclick="setLanguage('fr')">Français</button>
+
+<!-- Your English content -->
+<div id="en-content" style="display:none;">
+  <h1>My Resume</h1>
+  <p>English content here...</p>
+</div>
+
+<!-- Your French content -->
+<div id="fr-content" style="display:none;">
+  <h1>Mon CV</h1>
+  <p>Contenu en français ici...</p>
+</div>
+
+<script>
+// Set default language or check localStorage
+let currentLang = localStorage.getItem('lang') || 'en';
+showContent(currentLang);
+
+function setLanguage(lang) {
+  localStorage.setItem('lang', lang);
+  showContent(lang);
+}
+
+function showContent(lang) {
+  // Hide all language content
+  document.querySelectorAll('[id$="-content"]').forEach(el => {
+    el.style.display = 'none';
+  });
+  
+  // Show selected language
+  document.getElementById(`${lang}-content`).style.display = 'block';
+}
+</script>
