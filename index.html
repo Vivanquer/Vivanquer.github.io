@@ -1,17 +1,27 @@
+<style>
+    .resume {
+        font-family: "Times New Roman", Times, serif;
+    }
+</style>
+
 <!-- Add these buttons somewhere in your HTML -->
 <button onclick="setLanguage('en')">English</button>
 <button onclick="setLanguage('fr')">Français</button>
 
 <!-- Your English content -->
 <div id="en-content" style="display:none;">
-  <h1>My Resume</h1>
-  <p>English content here...</p>
+  <div class = "resume">
+    <h1>My Resume</h1>
+    <p>English content here...</p>
+  </div>
 </div>
 
 <!-- Your French content -->
 <div id="fr-content" style="display:none;">
-  <h1>Mon CV</h1>
-  <p>Contenu en français ici...</p>
+  <div class = "resume">
+    <h1>Mon CV</h1>
+    <p>Contenu en français ici...</p>
+  </div>
 </div>
 
 <script>
