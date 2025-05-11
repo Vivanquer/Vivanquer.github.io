@@ -29,7 +29,7 @@ A static webpage version of my resume built with HTML/CSS/JS, designed to:
 - **GitHub Pages** (hosting)  
 
 ## How to Use  
-1. **Web Access**: Visit [your-github-io-link]()  
+1. **Web Access**: Visit [https://vivanquer.github.io/]()  
 2. **QR Code**: Scan or print:  
    ![QR Code](qr_code.jpg)  
 3. **PDF Export**: Press `Ctrl+P` → "Save as PDF" (styled for printing).  
