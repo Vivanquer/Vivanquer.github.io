@@ -3,13 +3,10 @@
         font-size: 0.85em;
         font-family: "Times New Roman", Times, serif;
     }
-</style>
-
-<style>
     .header {
-        border-bottom: 2px solid #333; /* Darker, thicker line */
-        padding-bottom: 15px;          /* Space between text and line */
-        margin-bottom: 15px;           /* Space after the line */
+        border-bottom: 2px solid #333;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
     }
     .print-button {
       background: #2e86de;
@@ -21,31 +18,31 @@
       font-size: 14px;
       margin: 10px 0;
     }
-    
     .print-button:hover {
       background: #1e6fbf;
     }
-    
-    /* Hide button when printing */
+    .language-selector {
+        margin: 10px 0;
+    }
+    .resume-section {
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
     @media print {
-      .print-button {
-        display: none;
+      .print-button, .language-selector {
+        display: none !important;
       }
     }
 </style>
 
+<!-- Language selector buttons -->
+<div class="language-selector">
+    <button onclick="setLanguage('fr')">Français</button>
+    <button onclick="setLanguage('en')">English</button>
+</div>
 
-<style>
-  .resume-section {
-    margin-bottom: 5px;    /* Reduced gap */
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd; /* Simple line */
-  }
-</style>
-
-<!-- Add these buttons somewhere in your HTML -->
-<button onclick="setLanguage('fr')">Français</button>
-<button onclick="setLanguage('en')">English</button>
+<!-- Rest of your HTML remains the same -->
 
 <!-- Your English content -->
 <div id="en-content" style="display:none;">
