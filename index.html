@@ -30,14 +30,25 @@
         border-bottom: 1px solid #ddd;
     }
     @media print {
+        body {
+            margin-left: 2cm; /* Indent entire content from left */
+            margin-right: 1cm; /* Optional right margin */
+        }
+        
+        /* Or indent specific sections */
+        .resume-section {
+            margin-left: 1.5cm;
+            padding-left: 0.5cm;
+        }
+        
+        /* Keep your existing print hiding rules */
         .print-button, .language-selector {
             display: none !important;
         }
-    }
-
-    /* NEW: Remove print header/footer */
-    @page {
-        margin: 0mm;
+        
+        @page {
+            margin: 0mm; /* Removes browser headers */
+        }
     }
 
     
