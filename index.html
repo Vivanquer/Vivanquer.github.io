@@ -11,7 +11,29 @@
         padding-bottom: 15px;          /* Space between text and line */
         margin-bottom: 15px;           /* Space after the line */
     }
+    .print-button {
+      background: #2e86de;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    
+    .print-button:hover {
+      background: #1e6fbf;
+    }
+    
+    /* Hide button when printing */
+    @media print {
+      .print-button {
+        display: none;
+      }
+    }
 </style>
+
 
 <style>
   .resume-section {
