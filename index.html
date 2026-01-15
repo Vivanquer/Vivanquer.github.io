@@ -1,91 +1,59 @@
 <style>
-   .resume {
-        font-size: 0.95em; /* Légèrement plus grand pour la lisibilité */
+    .resume {
+        font-size: 0.88em; /* Taille optimale pour l'équilibre contenu/espace  */
         font-family: "Times New Roman", Times, serif;
-        line-height: 1.4;
+        line-height: 1.3;
         color: #333;
-        max-width: 800px;
+        max-width: 900px;
         margin: auto;
     }
+    
     .header {
         border-bottom: 2px solid #333;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-        text-align: center; /* Centré pour un look plus classique */
-    }
-    .header h1 { margin: 0; text-transform: uppercase; }
-    .header h2 { margin: 5px 0; font-weight: normal; color: #555; }
-    
-    .print-button {
-      background: #2e86de;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      margin: 10px 0;
-    }
-    .language-selector {
-        margin: 20px 0;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
         text-align: center;
+    }
+    .header h1 { margin: 0; font-size: 2em; text-transform: uppercase; [cite: 57] }
+    .header h2 { margin: 2px 0; font-size: 1.2em; font-weight: normal; color: #555; [cite: 58] }
+    .header p { margin: 4px 0; font-size: 0.9em; [cite: 59] }
+    
+    /* Layout pour maximiser l'espace */
+    .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Deux colonnes pour les sections courtes */
+        gap: 15px;
+    }
+    
+    .full-width {
+        grid-column: span 2;
     }
     
     .resume-section {
-        margin-bottom: 15px;
-        padding-bottom: 5px;
-        /* Empêche une section de se couper au milieu d'un titre ou d'un paragraphe */
-        break-inside: avoid; 
+        margin-bottom: 10px;
+        break-inside: avoid;
     }
     
     .resume-section h3 {
-        border-bottom: 1px solid #666;
+        border-bottom: 1px solid #999;
         text-transform: uppercase;
-        font-size: 1.1em;
-        margin-bottom: 8px;
+        font-size: 1em;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        color: #000;
     }
 
-    ul { margin-top: 5px; }
-    li { margin-bottom: 3px; }
+    ul { margin: 4px 0; padding-left: 18px; }
+    li { margin-bottom: 2px; }
+    b { font-size: 0.95em; }
 
-    /* --- Optimisation pour l'impression --- */
     @media print {
         @page {
             size: letter;
-            margin: 1.5cm; /* Marges standards */
+            margin: 0.8cm 1.2cm; /* Marges réduites pour tout faire tenir  */
         }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            background: white;
-        }
-
-        .resume {
-            width: 100%;
-            font-size: 10pt; /* Taille de police standard pour CV */
-        }
-
-        /* Masquer les éléments interactifs */
-        .print-button, .language-selector, .print-button * {
-            display: none !important;
-        }
-
-        /* Forcer le regroupement des blocs pour éviter les titres orphelins */
-        .resume-section {
-            break-inside: avoid;
-            page-break-inside: avoid;
-            margin-bottom: 20px;
-        }
-
-        h1, h2, h3 {
-            break-after: avoid; /* Le titre ne doit jamais être seul en bas de page */
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
+        .print-button, .language-selector { display: none !important; }
+        .resume-section { page-break-inside: avoid; }
     }
     
 </style>
