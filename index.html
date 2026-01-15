@@ -1,12 +1,33 @@
 <style>
     .resume {
-        font-size: 0.88em; /* Taille optimale pour l'équilibre contenu/espace  */
+        font-size: 0.88em;
         font-family: "Times New Roman", Times, serif;
         line-height: 1.3;
         color: #333;
         max-width: 900px;
         margin: auto;
+        position: relative;
     }
+    
+    .language-selector {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        gap: 5px;
+    }
+    
+    .lang-btn {
+        background: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 4px 8px;
+        font-size: 11px;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: 0.2s;
+    }
+    
+    .lang-btn:hover { background: #e0e0e0; }
     
     .header {
         border-bottom: 2px solid #333;
@@ -14,20 +35,17 @@
         margin-bottom: 12px;
         text-align: center;
     }
-    .header h1 { margin: 0; font-size: 2em; text-transform: uppercase; [cite: 57] }
-    .header h2 { margin: 2px 0; font-size: 1.2em; font-weight: normal; color: #555; [cite: 58] }
-    .header p { margin: 4px 0; font-size: 0.9em; [cite: 59] }
+    .header h1 { margin: 0; font-size: 2em; text-transform: uppercase; }
+    .header h2 { margin: 2px 0; font-size: 1.2em; font-weight: normal; color: #555; }
+    .header p { margin: 4px 0; font-size: 0.9em; }
     
-    /* Layout pour maximiser l'espace */
     .main-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Deux colonnes pour les sections courtes */
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
     
-    .full-width {
-        grid-column: span 2;
-    }
+    .full-width { grid-column: span 2; }
     
     .resume-section {
         margin-bottom: 10px;
@@ -40,22 +58,27 @@
         font-size: 1em;
         margin-bottom: 5px;
         margin-top: 5px;
-        color: #000;
     }
 
     ul { margin: 4px 0; padding-left: 18px; }
     li { margin-bottom: 2px; }
-    b { font-size: 0.95em; }
+
+    .print-button {
+        display: block;
+        margin: 5px auto;
+        padding: 5px 15px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
     @media print {
-        @page {
-            size: letter;
-            margin: 0.8cm 1.2cm; /* Marges réduites pour tout faire tenir  */
-        }
-        .print-button, .language-selector { display: none !important; }
-        .resume-section { page-break-inside: avoid; }
+        @page { size: letter; margin: 0.8cm 1.2cm; }
+        .language-selector, .print-button { display: none !important; }
+        .resume { position: static; }
     }
-    
 </style>
 
 <!-- Language selector buttons -->
