@@ -1,13 +1,21 @@
 <style>
-    .resume {
-        font-size: 0.85em;
+   .resume {
+        font-size: 0.95em; /* Légèrement plus grand pour la lisibilité */
         font-family: "Times New Roman", Times, serif;
+        line-height: 1.4;
+        color: #333;
+        max-width: 800px;
+        margin: auto;
     }
     .header {
         border-bottom: 2px solid #333;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
         margin-bottom: 15px;
+        text-align: center; /* Centré pour un look plus classique */
     }
+    .header h1 { margin: 0; text-transform: uppercase; }
+    .header h2 { margin: 5px 0; font-weight: normal; color: #555; }
+    
     .print-button {
       background: #2e86de;
       color: white;
@@ -18,39 +26,67 @@
       font-size: 14px;
       margin: 10px 0;
     }
-    .print-button:hover {
-      background: #1e6fbf;
-    }
     .language-selector {
-        margin: 10px 0;
+        margin: 20px 0;
+        text-align: center;
     }
+    
     .resume-section {
-        margin-bottom: 5px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ddd;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        /* Empêche une section de se couper au milieu d'un titre ou d'un paragraphe */
+        break-inside: avoid; 
     }
-    @media print {
-        body {
-            margin-left: 2cm; /* Indent entire content from left */
-            margin-right: 1cm; /* Optional right margin */
-        }
-        
-        /* Or indent specific sections */
-        .resume-section {
-            margin-left: 1.5cm;
-            padding-left: 0.5cm;
-        }
-        
-        /* Keep your existing print hiding rules */
-        .print-button, .language-selector {
-            display: none !important;
-        }
-        
-        @page {
-            margin: 0mm; /* Removes browser headers */
-        }
+    
+    .resume-section h3 {
+        border-bottom: 1px solid #666;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        margin-bottom: 8px;
     }
 
+    ul { margin-top: 5px; }
+    li { margin-bottom: 3px; }
+
+    /* --- Optimisation pour l'impression --- */
+    @media print {
+        @page {
+            size: letter;
+            margin: 1.5cm; /* Marges standards */
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+
+        .resume {
+            width: 100%;
+            font-size: 10pt; /* Taille de police standard pour CV */
+        }
+
+        /* Masquer les éléments interactifs */
+        .print-button, .language-selector, .print-button * {
+            display: none !important;
+        }
+
+        /* Forcer le regroupement des blocs pour éviter les titres orphelins */
+        .resume-section {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            break-after: avoid; /* Le titre ne doit jamais être seul en bas de page */
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    }
     
 </style>
 
